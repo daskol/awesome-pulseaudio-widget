@@ -230,6 +230,8 @@ function PulseAudioWidget:init(args)
             self.sink = k
             break
         end
+    else
+        self.sink = args.sink
     end
 
     self.pa:subscribe_to_volume_updates(function(...) self:update(...) end)
